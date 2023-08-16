@@ -1,0 +1,20 @@
+#red{
+    background-color: red;
+    height: 350px;
+    width: 400px;
+    padding: 30px;
+}
+#details{
+    display: none;
+}
+form{
+    background-color: brown;
+}
+.msg{
+    height: 250px;
+    background-color: teal;
+}
+.language{
+    height: 250px;
+    background-color: aqua;
+}
