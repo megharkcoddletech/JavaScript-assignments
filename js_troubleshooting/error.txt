@@ -1,0 +1,10 @@
+Changed varible of selectedIndex from 'const' to let
+in slider.html, the script src is edited and added the directory
+script added at the just before the end of body tag
+the getElementById edited by removing the 's'
+added 's' to the id of <img>  
+Added '{}' for else statement
+added '/' at the end of image directory when it is called by getElementById
+changed the argument pased in onclick function ('0' => 0, '1'=> 1)
+if (selectedIndex <= 0)' changed to   if (selectedIndex < 0) 
+Added event listener for both button 'prev' and 'next'

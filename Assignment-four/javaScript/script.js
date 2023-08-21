@@ -48,8 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let userName2 = document.querySelector('#userName2');
     let userAge2 = document.querySelector('#userAge2');
     let userMail2 = document.querySelector('#userMail2');
-    let cookieButton = document.querySelector('cookieButton');
-
     btnSubmit2.addEventListener('click', () => {
         setCookie("userName2", userName2.value, 365);
         setCookie("userAge2", userAge2.value, 365);
@@ -90,11 +88,11 @@ var showDetails = document.getElementById('showDetails');
 var details = document.getElementById('details');
 showDetails.addEventListener('click', viewDetails);
 function viewDetails() {
-    if (details.style.display === 'none') {
-        document.querySelector('#details').style.display = 'block';
+    if (details.style.display === 'block') {
+        document.querySelector('#details').style.display = 'none';
     }
     else {
-        document.querySelector('#details').style.display = 'none';
+        document.querySelector('#details').style.display = 'block';
     }
 }
 
@@ -131,7 +129,7 @@ for (let i = 0; i < program.length; i++) {
     let btn = document.createElement('button');
     btn.innerText = program[i];
     btn.addEventListener('click', function () {
-        language.textContent = program[i];
+        language.innerHTML = program[i];
     });
     language.appendChild(btn);
 }
@@ -139,8 +137,8 @@ for (let i = 0; i < program.length; i++) {
 // 8)Create a form with a text field which when submitted, will change the tab title to whatever is entered, limit the field to 50 characters, otherwise show an error message, and stay on the same page when submitted(it shouldn't refresh).
 document.addEventListener('DOMContentLoaded', () => {
     let form3 = document.querySelector('.form3');
-    let titleBTN = document.querySelector('.titleBTN');
-    changeTitle = document.querySelector('#changeTitle');
+    // let titleBTN = document.querySelector('.titleBTN');
+    let changeTitle = document.querySelector('#changeTitle');
     let titleDiv = document.querySelector('.titleDiv');
     form3.addEventListener('submit', titleChange);
     function titleChange(event) {
