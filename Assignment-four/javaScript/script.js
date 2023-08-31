@@ -6,7 +6,8 @@ console.log("height of browser " + window.outerHeight);
 console.log("host " + window.location.hostname);
 
 // c)To show a warning message if there is no https protocol used in the visited website.
-var proto = window.location.protocol;
+
+let proto = window.location.protocol;
 function protoCheck() {
     if (proto !== "https") {
         console.warn("https not used");
@@ -18,11 +19,13 @@ function protoCheck() {
 protoCheck(proto);
 
 // d)To show an alert message after 10sec while the page is refreshed.
+
 setTimeout(function () {
     alert("alert after 10 seconds");
 }, 10000);
 
 // 2) Store your basic details in local storage of the browser every time the page loads, then console them and finally delete them after 1 minute of the page load. 
+
 let userName = document.getElementById('userName');
 let userAge = document.getElementById('userAge');
 let userMail = document.getElementById('userMail');
@@ -68,7 +71,7 @@ console.log("click to redirect to google " + " www.google.com");
 // 5) Create a div with background color red, create buttons
 // a)to hide the div
 
-var toHide = document.getElementById('toHide');
+let toHide = document.getElementById('toHide');
 toHide.addEventListener('click', hideDiv);
 function hideDiv() {
     document.querySelector('#red').style.display = 'none';
@@ -76,7 +79,7 @@ function hideDiv() {
 
 // b)to change the background color of the div
 
-var changeColor = document.getElementById('changeColor');
+let changeColor = document.getElementById('changeColor');
 changeColor.addEventListener('click', changeBg);
 function changeBg() {
     document.querySelector('#red').style.backgroundColor = 'blue';
@@ -84,8 +87,8 @@ function changeBg() {
 
 // c)to show your basic details on the div, the details should hide/show, on the click.
 
-var showDetails = document.getElementById('showDetails');
-var details = document.getElementById('details');
+let showDetails = document.getElementById('showDetails');
+let details = document.getElementById('details');
 showDetails.addEventListener('click', viewDetails);
 function viewDetails() {
     if (details.style.display === 'block') {
@@ -98,16 +101,16 @@ function viewDetails() {
 
 // 6) Create a select box with numbers 1 to 10,  when selected 9, you should change the selection to 10 and show a message that "9 is fully occupied please select another number", when selected any number other than 9 it should show a message as "you selected 'particular number' " in a div, on hovering the div it should change the background color of the div into a highlighting shade, while the mouse pointer leaves the message area the background color should go back to as before (don't use CSS to attain the hovering functionality)
 
+
 let message = document.querySelector('.msg');
 let select = document.querySelector('select');
-let selectItem = select.value;
 select.addEventListener('change', selectBox);
 function selectBox() {
-    if (select.value == '9') {
-        selectItem = 10;
+    if (select.value == 9) {
+        select.value = 10;
         message.textContent = "9 th box is full , try another";
     } else {
-        message.textContent = `selected box is ${selectItem}`;
+        message.textContent = `selected box is ${select.value}`;
     }
 }
 
@@ -123,21 +126,23 @@ function mouseLeaves() {
 
 // 7)Consider an array with names of 10 programming languages, make 10 buttons by iterating this array, when clicked on each button the name of the programming language should be shown in a corresponding div. 
 
+
 let program = ["c", "c++", "java", "dart", "dotnet", "python", "html", "javascript", "sql", "jquery"];
 let language = document.querySelector('.language');
+let language_msg = document.querySelector('.language_msg')
 for (let i = 0; i < program.length; i++) {
     let btn = document.createElement('button');
     btn.innerText = program[i];
-    btn.addEventListener('click', function () {
-        language.innerHTML = program[i];
-    });
     language.appendChild(btn);
+    btn.addEventListener('click', function () {
+        language_msg.innerHTML = program[i];
+    });
 }
 
 // 8)Create a form with a text field which when submitted, will change the tab title to whatever is entered, limit the field to 50 characters, otherwise show an error message, and stay on the same page when submitted(it shouldn't refresh).
+
 document.addEventListener('DOMContentLoaded', () => {
     let form3 = document.querySelector('.form3');
-    // let titleBTN = document.querySelector('.titleBTN');
     let changeTitle = document.querySelector('#changeTitle');
     let titleDiv = document.querySelector('.titleDiv');
     form3.addEventListener('submit', titleChange);
@@ -154,7 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 9)When the control+enter key is pressed show an alert message. 
-let key = document.querySelector('#key');
+
+let key = document.querySelector('body');
 key.addEventListener('keyup', (event) => {
     if (event.keyCode === 13 && event.ctrlKey) {
         alert("keyup event works")

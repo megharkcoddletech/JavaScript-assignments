@@ -18,3 +18,12 @@ form{
     height: 250px;
     background-color: aqua;
 }
+
+p{
+    text-align: center;
+    font-size: 25px;
+}
+button{
+    padding: 4px 8px;
+    margin: 5px;
+}
